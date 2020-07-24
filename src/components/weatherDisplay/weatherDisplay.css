@@ -16,7 +16,17 @@
 .textStyle {
   color: #fff;
 }
-.cityName{
-    position: relative;
-    top: 60px;
+.cityName {
+  position: relative;
+  top: 60px;
+}
+.predictButton {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%, -10%);
+  border: 1px solid #fff;
+}
+.detailTextStyle{
+  padding:4px !important;
 }

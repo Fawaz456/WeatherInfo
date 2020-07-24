@@ -1,25 +1,18 @@
 import React from "react";
-import {
-  Container,
-  Typography,
-  Grid,
-  Backdrop,
-  CircularProgress,
-} from "@material-ui/core";
+import { Container, Typography, Grid } from "@material-ui/core";
 import "./weatherDisplay.css";
-import backImage1 from "../assets/imgs/cloudy.jpg";
-import backImage2 from "../assets/imgs/night.jpg";
-import backImage3 from "../assets/imgs/sunny.jpg";
+import backImage1 from "../../assets/imgs/cloudy.jpg";
+import backImage2 from "../../assets/imgs/night.jpg";
+import backImage3 from "../../assets/imgs/sunny.jpg";
 import CloudIcon from "@material-ui/icons/Cloud";
 import WbSunnyIcon from "@material-ui/icons/WbSunny";
 import NightsStayIcon from "@material-ui/icons/NightsStay";
+import CircularProgress from "../circularProgress/circularProgress";
 const WeatherDisplayPresentation = (props) => {
   return (
     <>
       {props.open ? (
-        <Backdrop open={props.open}>
-          <CircularProgress color="inherit" />
-        </Backdrop>
+        <CircularProgress open={props.open} />
       ) : (
         <Container
           className={["backgroundImg", "textStyle"]}
@@ -56,6 +49,11 @@ const WeatherDisplayPresentation = (props) => {
           <Grid className={"cityName"}>
             <Typography className={"textStyle"} variant="overline">
               {props.cityName}
+            </Typography>
+          </Grid>
+          <Grid className={"predictButton"} onClick={() => props.goToDaily()}>
+            <Typography className={"textStyle"} variant="overline">
+              <span className={"detailTextStyle"}>Weather Details</span>
             </Typography>
           </Grid>
         </Container>

@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import WeatherDisplayPresentation from "./weatherDisplayPresentation";
-import { getWeather } from "../modules/weatherApi";
+import { getWeather } from "../../modules/weatherApi";
+import { useHistory } from "react-router-dom";
 const WeatherDisplayContainer = (props) => {
+  const history = useHistory();
   const [cityName, setCityName] = useState("");
   const [weatherDescription, setWeatherDescription] = useState("");
   const [temperature, setTemperature] = useState("");
@@ -22,13 +24,13 @@ const WeatherDisplayContainer = (props) => {
             setMain(res.data.weather[0].main);
           } else {
             setOpenBackDrop(false);
-            alert("some error");
+            alert("Error fetching weather");
           }
         });
       },
       (err) => {
         setOpenBackDrop(false);
-        alert("Error Getting Location");
+        alert("Allow location access");
       }
     );
   }, []);
@@ -39,6 +41,7 @@ const WeatherDisplayContainer = (props) => {
       temperature={temperature}
       main={main}
       open={openBackDrop}
+      goToDaily={() => history.push("/daily")}
     />
   );
 };

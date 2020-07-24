@@ -1,0 +1,19 @@
+.contStyle {
+  padding: 1rem !important;
+}
+.sunny {
+  color: #ffeb3b;
+}
+.cloud {
+  color: #00b8d4;
+}
+.rain {
+  color: #01579b;
+}
+.sunny,.rain,.cloud{
+  vertical-align: text-top;
+}
+.cardStyle{
+  margin:1rem;
+  padding:1rem;
+}
