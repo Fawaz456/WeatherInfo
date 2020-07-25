@@ -36,6 +36,7 @@ const WeatherDailyContainer = (props) => {
       dialyData={dialyData}
       currentData={currentData}
       open={openBackDrop}
+      weekDays={["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]}
     />
   );
 };

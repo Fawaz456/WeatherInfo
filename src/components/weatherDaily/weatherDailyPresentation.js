@@ -75,19 +75,7 @@ const WeatherDailyPresentation = (props) => {
                       secondary={item.weather[0].description}
                     />
                     <ListItemAvatar>
-                      {new Date(item.dt * 1000).getDay() === 0
-                        ? "Sun"
-                        : new Date(item.dt * 1000).getDay() === 1
-                        ? "Mon"
-                        : new Date(item.dt * 1000).getDay() === 2
-                        ? "Tue"
-                        : new Date(item.dt * 1000).getDay() === 3
-                        ? "Wed"
-                        : new Date(item.dt * 1000).getDay() === 4
-                        ? "Thu"
-                        : new Date(item.dt * 1000).getDay() === 5
-                        ? "Fri"
-                        : "Sat"}
+                      {props.weekDays[new Date(item.dt * 1000).getDay()]}
                     </ListItemAvatar>
                   </ListItem>
                 );
